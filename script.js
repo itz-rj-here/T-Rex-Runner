@@ -1,7 +1,7 @@
 // Copyright (c) 2014 The Chromium Authors. All rights reserved.
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
-// extract from chromium source code by @liuwayong
+// Extract from Chromium Source Code by @liuwayong
 (function () {
     'use strict';
     /**
@@ -131,7 +131,6 @@
         ARCADE_MODE_TOP_POSITION_PERCENT: 0.1
     };
 
-
     /**
      * Default dimensions.
      * @enum {string}
@@ -140,7 +139,6 @@
         WIDTH: DEFAULT_WIDTH,
         HEIGHT: 150
     };
-
 
     /**
      * CSS class names.
@@ -157,7 +155,6 @@
         SNACKBAR_SHOW: 'snackbar-show',
         TOUCH_CONTROLLER: 'controller'
     };
-
 
     /**
      * Sprite definition layout of the spritesheet.
@@ -190,7 +187,6 @@
         }
     };
 
-
     /**
      * Sound FX. Reference to the ID of the audio tag on interstitial page.
      * @enum {string}
@@ -201,7 +197,6 @@
         SCORE: 'offline-sound-reached'
     };
 
-
     /**
      * Key code mapping.
      * @enum {Object}
@@ -211,7 +206,6 @@
         DUCK: { '40': 1 },  // Down
         RESTART: { '13': 1 }  // Enter
     };
-
 
     /**
      * Runner event names.
@@ -232,7 +226,6 @@
         FOCUS: 'focus',
         LOAD: 'load'
     };
-
 
     Runner.prototype = {
         /**
@@ -477,7 +470,7 @@
                     'from { width:' + Trex.config.WIDTH + 'px }' +
                     'to { width: ' + this.dimensions.WIDTH + 'px }' +
                     '}';
-                
+
                 // create a style sheet to put the keyframe rule in 
                 // and then place the style sheet in the html head    
                 var sheet = document.createElement('style');
@@ -499,7 +492,6 @@
                 this.restart();
             }
         },
-
 
         /**
          * Update the game status to started.
@@ -716,7 +708,6 @@
             }
         },
 
-
         /**
          * Process key up.
          * @param {Event} e
@@ -917,7 +908,6 @@
         }
     };
 
-
     /**
      * Updates the canvas size taking into
      * account the backing store pixel ratio and
@@ -963,7 +953,6 @@
         return false;
     };
 
-
     /**
      * Get random number.
      * @param {number} min
@@ -974,7 +963,6 @@
         return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
-
     /**
      * Vibrate on mobile devices.
      * @param {number} duration Duration of the vibration in milliseconds.
@@ -984,7 +972,6 @@
             window.navigator.vibrate(duration);
         }
     }
-
 
     /**
      * Create canvas element.
@@ -1005,7 +992,6 @@
         return canvas;
     }
 
-
     /**
      * Decodes the base 64 audio to ArrayBuffer used by Web Audio.
      * @param {string} base64String
@@ -1022,7 +1008,6 @@
         return bytes.buffer;
     }
 
-
     /**
      * Return the current timestamp.
      * @return {number}
@@ -1031,9 +1016,7 @@
         return IS_IOS ? new Date().getTime() : performance.now();
     }
 
-
     //******************************************************************************
-
 
     /**
      * Game over panel.
@@ -1052,7 +1035,6 @@
         this.draw();
     };
 
-
     /**
      * Dimensions used in the panel.
      * @enum {number}
@@ -1065,7 +1047,6 @@
         RESTART_WIDTH: 36,
         RESTART_HEIGHT: 32
     };
-
 
     GameOverPanel.prototype = {
         /**
@@ -1130,7 +1111,6 @@
         }
     };
 
-
     //******************************************************************************
 
     /**
@@ -1193,7 +1173,6 @@
         return false;
     };
 
-
     /**
      * Adjust the collision box.
      * @param {!CollisionBox} box The original box.
@@ -1208,7 +1187,6 @@
             box.height);
     };
 
-
     /**
      * Draw the collision boxes for debug.
      */
@@ -1222,7 +1200,6 @@
             obstacleBox.width, obstacleBox.height);
         canvasCtx.restore();
     };
-
 
     /**
      * Compare two collision boxes for a collision.
@@ -1249,7 +1226,6 @@
         return crashed;
     };
 
-
     //******************************************************************************
 
     /**
@@ -1265,7 +1241,6 @@
         this.width = w;
         this.height = h;
     };
-
 
     //******************************************************************************
 
@@ -1314,7 +1289,6 @@
      * @const
      */
     Obstacle.MAX_OBSTACLE_LENGTH = 3,
-
 
         Obstacle.prototype = {
             /**
@@ -1460,7 +1434,6 @@
             }
         };
 
-
     /**
      * Obstacle definitions.
      * minGap: minimum pixel space betweeen obstacles.
@@ -1519,7 +1492,6 @@
         }
     ];
 
-
     //******************************************************************************
     /**
      * T-rex game character.
@@ -1557,7 +1529,6 @@
         this.init();
     };
 
-
     /**
      * T-rex player config.
      * @enum {number}
@@ -1578,7 +1549,6 @@
         WIDTH_DUCK: 59
     };
 
-
     /**
      * Used in collision detection.
      * @type {Array<CollisionBox>}
@@ -1597,7 +1567,6 @@
         ]
     };
 
-
     /**
      * Animation states.
      * @enum {string}
@@ -1615,7 +1584,6 @@
      * @const
      */
     Trex.BLINK_TIMING = 7000;
-
 
     /**
      * Animation config for different states.
@@ -1643,7 +1611,6 @@
             msPerFrame: 1000 / 8
         }
     };
-
 
     Trex.prototype = {
         /**
@@ -1883,7 +1850,6 @@
         }
     };
 
-
     //******************************************************************************
 
     /**
@@ -1918,7 +1884,6 @@
         this.init(canvasWidth);
     };
 
-
     /**
      * @enum {number}
      */
@@ -1927,7 +1892,6 @@
         HEIGHT: 13,
         DEST_WIDTH: 11
     };
-
 
     /**
      * Y positioning of the digits in the sprite sheet.
@@ -1957,7 +1921,6 @@
         // Flash iterations for achievement animation.
         FLASH_ITERATIONS: 3
     };
-
 
     DistanceMeter.prototype = {
         /**
@@ -2144,7 +2107,6 @@
         }
     };
 
-
     //******************************************************************************
 
     /**
@@ -2168,7 +2130,6 @@
         this.init();
     };
 
-
     /**
      * Cloud object config.
      * @enum {number}
@@ -2181,7 +2142,6 @@
         MIN_SKY_LEVEL: 71,
         WIDTH: 46
     };
-
 
     Cloud.prototype = {
         /**
@@ -2239,7 +2199,6 @@
             return this.xPos + Cloud.config.WIDTH > 0;
         }
     };
-
 
     //******************************************************************************
 
@@ -2396,7 +2355,6 @@
 
     };
 
-
     //******************************************************************************
 
     /**
@@ -2422,7 +2380,6 @@
         this.draw();
     };
 
-
     /**
      * Horizon line dimensions.
      * @enum {number}
@@ -2432,7 +2389,6 @@
         HEIGHT: 12,
         YPOS: 127
     };
-
 
     HorizonLine.prototype = {
         /**
@@ -2525,7 +2481,6 @@
         }
     };
 
-
     //******************************************************************************
 
     /**
@@ -2558,7 +2513,6 @@
         this.init();
     };
 
-
     /**
      * Horizon config.
      * @enum {number}
@@ -2570,7 +2524,6 @@
         HORIZON_HEIGHT: 16,
         MAX_CLOUDS: 6
     };
-
 
     Horizon.prototype = {
         /**
@@ -2746,7 +2699,6 @@
         }
     };
 })();
-
 
 function onDocumentLoad() {
     new Runner('.interstitial-wrapper');
